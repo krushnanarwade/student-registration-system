@@ -1,16 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Student Registration</title>
-    <link rel="stylesheet" href="/static/style.css">
+    <meta charset="UTF-8">
+    <title>Register Student</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h2>Student Registration Form</h2>
-    <form action="/register" method="POST">
-        <input type="text" name="name" placeholder="Enter Name" required><br>
-        <input type="email" name="email" placeholder="Enter Email" required><br>
-        <input type="text" name="course" placeholder="Enter Course" required><br>
-        <button type="submit">Register</button>
-    </form>
+    <div class="container fade-in">
+        <h2>Register Student</h2>
+        <form method="POST" action="/register">
+            <input type="text" name="name" placeholder="Full Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="text" name="course" placeholder="Course" required>
+            <button type="submit">Register</button>
+        </form>
+
+        <a href="/students" class="btn-link">View Students</a>
+        <a href="/logout" class="btn-link">Logout</a>
+    </div>
 </body>
 </html>

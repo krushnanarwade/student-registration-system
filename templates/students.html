@@ -1,24 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Registered Students</title>
-    <link rel="stylesheet" href="/static/style.css">
+    <meta charset="UTF-8">
+    <title>Students List</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h2>Registered Students</h2>
-    <table>
-        <tr>
-            <th>ID</th><th>Name</th><th>Email</th><th>Course</th>
-        </tr>
-        {% for s in students %}
-        <tr>
-            <td>{{s[0]}}</td>
-            <td>{{s[1]}}</td>
-            <td>{{s[2]}}</td>
-            <td>{{s[3]}}</td>
-        </tr>
-        {% endfor %}
-    </table>
+    <div class="container fade-in">
+        <h2>Registered Students</h2>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Course</th>
+            </tr>
+            {% for student in students %}
+            <tr>
+                <td>{{ student[0] }}</td>
+                <td>{{ student[1] }}</td>
+                <td>{{ student[2] }}</td>
+                <td>{{ student[3] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <a href="/register" class="btn-link">Add Another</a>
+        <a href="/logout" class="btn-link">Logout</a>
+    </div>
 </body>
 </html>
-
